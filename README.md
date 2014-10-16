@@ -4,7 +4,7 @@ TouchIDPass
 TouchIDPass是一个用TouchID来简化用户认证的第三放库。
 
 
-FAQ:
+》FAQ:
 1.什么是TouchIDPass？
 TouchIDPass是一个用TouchID来简化用户认证的第三放库。通过在你的app中集成这个库，用户可以通过TouchID进行登录、验证等操作，而不必输入繁琐的账号信息或验证码，极大的简化了用户的操作。
 
@@ -16,9 +16,10 @@ TouchIDPass是一个用TouchID来简化用户认证的第三放库。通过在�
 
 
 
-注意事项:
+》注意事项:
 只支持TouchID的苹果设备，并且系统版本需要iOS8及以上。
 
 
-免责声明：
+
+》免责声明：
 这个第三方库作者为detecyang，并且是开源、免费的。任何个人、公司、组织机构都有权使用，但请在您的项目中注明使用了detecyang的TouchIDPass。另外，由于是开源项目，任何人都可以维护此SDK，由于此SDK导致的财产损失和法律纠纷等问题由您本人承担，detecyang并不负责。
