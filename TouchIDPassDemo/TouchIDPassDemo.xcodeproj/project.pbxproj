@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EB0BCDF19F10D6700C15EEA /* TouchIDPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB0BCDE19F10D6700C15EEA /* TouchIDPass.m */; };
 		3EBBEBFB19EFF38500EEB90C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBEBFA19EFF38500EEB90C /* main.m */; };
 		3EBBEBFE19EFF38500EEB90C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBEBFD19EFF38500EEB90C /* AppDelegate.m */; };
 		3EBBEC0119EFF38500EEB90C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBEC0019EFF38500EEB90C /* ViewController.m */; };
@@ -14,7 +15,6 @@
 		3EBBEC0619EFF38500EEB90C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EBBEC0519EFF38500EEB90C /* Images.xcassets */; };
 		3EBBEC0919EFF38500EEB90C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EBBEC0719EFF38500EEB90C /* LaunchScreen.xib */; };
 		3EBBEC1519EFF38500EEB90C /* TouchIDPassDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBEC1419EFF38500EEB90C /* TouchIDPassDemoTests.m */; };
-		3EBBEC1F19EFF3DC00EEB90C /* SDK in Resources */ = {isa = PBXBuildFile; fileRef = 3EBBEC1E19EFF3DC00EEB90C /* SDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EB0BCDD19F10D6700C15EEA /* TouchIDPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchIDPass.h; sourceTree = "<group>"; };
+		3EB0BCDE19F10D6700C15EEA /* TouchIDPass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchIDPass.m; sourceTree = "<group>"; };
 		3EBBEBF519EFF38500EEB90C /* TouchIDPassDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchIDPassDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBBEBF919EFF38500EEB90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EBBEBFA19EFF38500EEB90C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,7 +43,6 @@
 		3EBBEC0E19EFF38500EEB90C /* TouchIDPassDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchIDPassDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBBEC1319EFF38500EEB90C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EBBEC1419EFF38500EEB90C /* TouchIDPassDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchIDPassDemoTests.m; sourceTree = "<group>"; };
-		3EBBEC1E19EFF3DC00EEB90C /* SDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SDK; path = ../SDK; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +63,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EB0BCDC19F10D6700C15EEA /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3EB0BCDD19F10D6700C15EEA /* TouchIDPass.h */,
+				3EB0BCDE19F10D6700C15EEA /* TouchIDPass.m */,
+			);
+			name = SDK;
+			path = ../SDK;
+			sourceTree = "<group>";
+		};
 		3EBBEBEC19EFF38500EEB90C = {
 			isa = PBXGroup;
 			children = (
-				3EBBEC1E19EFF3DC00EEB90C /* SDK */,
+				3EB0BCDC19F10D6700C15EEA /* SDK */,
 				3EBBEBF719EFF38500EEB90C /* TouchIDPassDemo */,
 				3EBBEC1119EFF38500EEB90C /* TouchIDPassDemoTests */,
 				3EBBEBF619EFF38500EEB90C /* Products */,
@@ -203,7 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EBBEC0419EFF38500EEB90C /* Main.storyboard in Resources */,
-				3EBBEC1F19EFF3DC00EEB90C /* SDK in Resources */,
 				3EBBEC0919EFF38500EEB90C /* LaunchScreen.xib in Resources */,
 				3EBBEC0619EFF38500EEB90C /* Images.xcassets in Resources */,
 			);
@@ -226,6 +236,7 @@
 				3EBBEC0119EFF38500EEB90C /* ViewController.m in Sources */,
 				3EBBEBFE19EFF38500EEB90C /* AppDelegate.m in Sources */,
 				3EBBEBFB19EFF38500EEB90C /* main.m in Sources */,
+				3EB0BCDF19F10D6700C15EEA /* TouchIDPass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +429,7 @@
 				3EBBEC1A19EFF38500EEB90C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3EBBEC1B19EFF38500EEB90C /* Build configuration list for PBXNativeTarget "TouchIDPassDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +438,7 @@
 				3EBBEC1D19EFF38500EEB90C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
