@@ -120,7 +120,7 @@
 - (NSString *)md5:(NSString *)string
 {
     const char *cStr = [string UTF8String];
-    unsigned char result[32];
+    unsigned char result[32] = {0};
     CC_MD5(cStr, strlen(cStr), result);
     NSString *ret = [NSString stringWithFormat:
                      @"%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x",

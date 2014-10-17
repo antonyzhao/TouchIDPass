@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TouchIDPass.h"
+#import <CommonCrypto/CommonDigest.h>
 
 #define MY_KEY  @"test"
 
@@ -31,14 +32,22 @@
 {
     TouchIDPass *tidp = [[TouchIDPass alloc] init];
     tidp.delegate = self;
-    //调用指纹认证界面
-    [tidp touch];
+    if ([tidp hasAuthorized]) {
+        //调用指纹认证界面
+        [tidp touch];
+    }
+    else {
+        //去授权
+        [self alertWithTitle:@"您未授权在app中使用指纹验证"
+                     message:@"在此处调用授权流程，如登录。（这里为了演示简化步骤直接授权，请再次轻触主界面按钮）"];
+        [tidp authorizeWithKey:MY_KEY];
+    }
 }
 
 - (BOOL)touchIDPass:(TouchIDPass *)touchIDPass tokenValid:(NSString *)keyWithMD5
 {
     const char *cStr = [MY_KEY UTF8String];
-    unsigned char result[32];
+    unsigned char result[32] = {0};
     CC_MD5(cStr, strlen(cStr), result);
     NSString *ret = [NSString stringWithFormat:
                      @"%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x",
@@ -70,7 +79,6 @@
     }
     else if (code == TouchIDPassResultUnauthorize) {
         info = @"在你的代码中执行授权流程，如登录操作。";
-        [touchIDPass authorizeWithKey:MY_KEY];
     }
     else if (code == TouchIDPassResultUnsupportDevice) {
         info = @"您的设备不支持指纹解锁";
@@ -79,14 +87,20 @@
         info = @"未知错误";
     }
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:(code == TouchIDPassResultSuccess) ? @"认证成功" : @"认证失败"
-                                                                   message:info
+    [self alertWithTitle:(code == TouchIDPassResultSuccess) ? @"认证成功" : @"认证失败"
+                 message:info];
+}
+
+
+- (void)alertWithTitle:(NSString *)title message:(NSString *)msg
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:msg
                                                             preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
     }]];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
 
 @end
