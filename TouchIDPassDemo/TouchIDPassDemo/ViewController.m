@@ -48,7 +48,7 @@
 {
     const char *cStr = [MY_KEY UTF8String];
     unsigned char result[32] = {0};
-    CC_MD5(cStr, strlen(cStr), result);
+    CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
     NSString *ret = [NSString stringWithFormat:
                      @"%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x",
                      result[0],result[1],result[2],result[3],
